@@ -9,5 +9,12 @@ const defaultState={
     ]
 }
 export default (state=defaultState,action)=>{
+    console.log(action)
+    if(action.type==='InputValue'){
+        let newState=JSON.parse(JSON.stringify(state))
+        newState.inputValue=action.value
+        return newState
+    }
     return state
 }
+
